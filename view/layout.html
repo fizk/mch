@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,700">
+        <title>Title</title>
+        <style>
+            html {
+                box-sizing: border-box;
+            }
+
+            *, *:before, *:after {
+                margin: 0;
+                padding: 0;
+                box-sizing: inherit;
+            }
+
+            body {
+                display: grid;
+                grid-template-columns: 150px 1fr;
+                /*grid-template-rows: 1fr 1fr 1fr;*/
+                max-width: 960px;
+                margin: auto;
+                font-family: 'Raleway', sans-serif;
+                font-size: 18px;
+                line-height: 1.2;
+            }
+
+            header {
+                grid-column: 1 / span 2;
+            }
+
+            main {
+
+            }
+
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+
+
+            p {margin-bottom: 1.250em;}
+
+            h1, h2, h3, h4, h5 {
+                margin: 1.250rem 0 0.64rem;
+                font-weight: inherit;
+                line-height: 1.2;
+            }
+
+            h1 {
+                margin-top: 0;
+                font-size: 3.052rem;
+            }
+
+            h2 {font-size: 2.441rem;}
+
+            h3 {font-size: 1.953rem;}
+
+            h4 {font-size: 1.563rem;}
+
+            h5 {font-size: 1.25rem;}
+
+            small {font-size: 0.8rem;}
+
+
+            pre {
+                background-color: #fafafa;
+                padding: 1rem;
+                width: 100%;
+
+                white-space: pre-wrap;
+                overflow-x: auto;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse
+            }
+
+            thead {
+                border-bottom: 1px solid #c8c8c8
+            }
+
+            tbody tr:nth-child(odd) {
+                background-color: #fafafa
+            }
+
+            blockquote {
+                margin: 1rem 0;
+                padding: 0 3.052rem;
+                border-left: 2px solid #c8c8c8;
+                font-style: italic
+            }
+
+            hr {
+                height: 1px;
+                border: none;
+                border-bottom: 1px solid #c8c8c8
+            }
+
+            ul {
+                margin: 1rem 0;
+            }
+
+            li p {
+                margin: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                {% for file in menu %}
+                <li>
+                    <a href="{{file.url}}">{{file.label}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <main class="article-item">
+            {{content|safe}}
+        </main>
+        <footer>
+            <address>facebook | twitter </address>
+        </footer>
+    </body>
+</html>
